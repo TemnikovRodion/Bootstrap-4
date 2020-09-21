@@ -1,0 +1,249 @@
+/*Объявление шрифтов*/
+@font-face {
+    font-family: "DINPro";
+    src: url("../fonts/DINPro.eot");
+    src: url("../fonts/DINPro.eot?#iefix") format("embedded-opentype"),
+    url("../fonts/DINPro.woff") format("woff"),
+    url("../fonts/DINPro.ttf") format("truetype");
+    font-style: normal;
+    font-weight: normal;
+}
+
+@font-face {
+    font-family: "DINPro-Bold";
+    src: url("../fonts/DINPro-Bold.eot");
+    src: url("../fonts/DINPro-Bold.eot?#iefix") format("embedded-opentype"),
+    url("../fonts/DINPro-Bold.woff") format("woff"),
+    url("../fonts/DINPro-Bold.ttf") format("truetype");
+    font-style: normal;
+    font-weight: normal;
+}
+
+@font-face {
+    font-family: "DINPro-Medium";
+    src: url("../fonts/DINPro-Medium.eot");
+    src: url("../fonts/DINPro-Medium.eot?#iefix") format("embedded-opentype"),
+    url("../fonts/DINPro-Medium.woff") format("woff"),
+    url("../fonts/DINPro-Medium.ttf") format("truetype");
+    font-style: normal;
+    font-weight: normal;
+}
+
+/*Объявление переменных*/
+html {
+    --title-color: #344258;
+    --text-color: #08172d;
+    --button-color: #00264c;
+    --footer-color: #0d1b2b;
+    --wrapper-color: #0058a7;
+    --email-color: #3d95e3;
+    --policy-color: #4c89c1;
+    --form-color: #243448;
+    --placeholder-color: #dcdee2;
+}
+
+/*Глобальная стилизация тегов*/
+h1 {
+    font-size: 2.5rem;
+    font-family: "DINPro-Bold";
+    color: white;
+    text-transform: uppercase;
+}
+
+h2 {
+    font-size: 1.66rem;
+    font-family: "DINPro";
+    color: var(--title-color);
+    text-transform: uppercase;
+}
+
+p {
+    font-size: 1rem;
+    font-family: "DINPro";
+    margin: 0;
+}
+
+ul {
+    font-family: "DINPro";
+    font-size: 1.45rem;
+}
+
+button {
+    font-size: 1rem;
+    font-family: "DINPro-Bold";
+    text-transform: uppercase;
+}
+
+input,
+textarea {
+    font-size: 0.83rem !important;
+}
+
+a {
+    font-family: "DINPro-Medium";
+    font-size: 0.77rem !important;
+}
+
+/*Стилизация блока BODY*/
+body {
+    display: flex;
+    font-size: 18px;
+    flex-direction: column;
+    height: 100vh;
+    min-height: 100vh;
+}
+
+/*Стилизация текста заголовка MAIN*/
+.title > p {
+    color: var(--text-color);
+}
+
+/*Стилизация модального окна MAIN*/
+.modal-dialog {
+    width: 70%;
+    max-width: 70%;
+}
+
+    .modal-content {
+        background: var(--footer-color);
+    }
+
+        .modal-header {
+            border-bottom: 1px solid var(--form-color);
+        }
+
+/*Стилизация проектов MAIN*/
+.projects > .item:hover {
+    transform: scale(1.05);
+    z-index: 1000;
+    cursor: pointer;
+    transition: all 0.5s;
+}
+
+.projects > .item::after{
+    content: attr(data-descr);
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    color: white;
+    font-size: 24px;
+    font-family: "DINPro-Bold";
+    text-transform: uppercase;
+    left: 0;
+    bottom: 2rem;
+}
+
+/*Стилизация кнопки "ЗАГРУЗИТЬ ЕЩЕ" в MAIN*/
+.load {
+    color: var(--title-color);
+    background: white;
+    border: 3px solid var(--button-color)
+}
+
+    .load:hover {
+        color: white;
+        background: var(--button-color);
+        transition: all 0.8s ;
+    }
+
+/*Стилизация блока FOOTER*/
+footer {
+    background: var(--footer-color);
+    color: white;
+}
+
+    .footer-content {
+        width: 91.666%;
+    }
+
+    @media(min-width: 1600px) {
+        .footer-content {
+            width: 75%;
+        }
+    }
+
+    /*Стилизация списка телефонов*/
+    .phones {
+        display: flex;
+        align-items: center;
+    }
+    
+        .phones > ul {
+            list-style: none;
+        }
+
+    /*Стилизация email*/
+    .email {
+        display: flex;
+        color: var(--email-color);
+        align-items: center;
+    }
+
+        .email > p {
+            border-left: 3px solid var(--wrapper-color);
+        }
+
+    /*Стилизация формы*/
+    .form {
+        border: 5px solid var(--form-color);
+    }
+
+        /*Стилизация полей ввода*/
+        .form-control {
+            color: white;
+            height: 55px;
+            background: var(--form-color);
+            border: 1px solid var(--footer-color);
+            border-radius: 0;
+            padding: 0 35px;
+        }
+
+        .form-control::-webkit-input-placeholder {
+            color: var(--placeholder-color);
+        }
+
+        .form-control::-moz-placeholder {
+            color: var(--placeholder-color);
+        }
+
+        .form-control:focus {
+            color: white;
+            background: var(--form-color);
+            box-shadow: none;
+        }
+
+        textarea.form-control {
+            height: 110px;
+            padding: 20px 35px;
+            resize: none;
+        }
+
+        /*Стилизация ссылки на политику обработки*/
+        .form-link {
+            display: flex;
+            justify-content: center;
+        }
+
+            .form-link > a {
+                color: var(--policy-color);
+                text-decoration: underline;
+            }
+
+                .form-link > a:hover,
+                .form-link > a:active,
+                .form-link > a:focus {
+                    color: white;
+                }        
+                
+        /*Стилизация кнопки "ОТПРАВИТЬ ЗАЯВКУ"*/
+        .submit {
+            background: none;
+            color: white;
+            border: 3px solid white;
+        }
+
+            .submit:hover {
+                background: var(--form-color);
+                transition: all 0.8s;
+            }

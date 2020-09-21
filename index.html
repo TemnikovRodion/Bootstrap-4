@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <title>Главная</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <link type="text/css" rel="stylesheet" href="css/bootstrap/bootstrap.min.css"/>
+    <link type="text/css" rel="stylesheet" href="css/style.css" />
+    <script src="scripts/jquery/dist/jquery.min.js"></script>
+    <script src="scripts/bootstrap/bootstrap.min.js"></script>
+  </head>
+  <body>
+    <!--Контент-->
+    <main class="pt-2 pb-5">
+      <!--Заголовок-->
+      <div class="title text-center m-auto px-1 py-5">
+        <h2 class="mb-5">Реализованные проекты</h2>
+        <p class="mb-5">
+          Коммуникационное агентство – часть многофункционального холдинга,
+          объединяющего различные компании на территории России и ближнего
+          зарубежья.
+          <br />
+          <br />
+          Наши подходы к организации бизнеса и имеющиеся ресурсы позволяют
+          одинаково эффективно обеспечивать реализацию как крупномасштабных
+          федеральных или международных проектов, так и решать небольшие
+          локальные задачи. Мы находимся в постоянном развитии, расширяя и
+          укрепляя имеющиеся бизнес-направления, а также формируя новые.
+        </p>
+      </div>
+
+      <!--
+        Модальное окно информации о проекте
+        Подразумевается передача заголовка, описания и картинки сторонними библиотеками, запрещенными в ТЗ
+      -->
+      <div class="modal fade" id="projectInfoDlg" data-backdrop="static" data-keyboard="false" tabindex="-1" role="dialog" aria-hidden="true">
+          <div class="modal-dialog">
+              <div class="modal-content text-white">
+                  <div class="modal-header">
+                    <h5 class="modal-title">Заголовок проекта</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true" class="text-white">&times;</span>
+                    </button>
+                  </div>
+
+                  <div class="modal-body">
+                      <div class="row">
+                        <div class="col-6">
+                            <img src="images/saha_republic.png" class="w-100" />
+                        </div>
+
+                        <div class="col-6">
+                            <p>Описание проекта</p>
+                        </div>
+                      </div>
+                  </div>
+              </div>
+          </div>
+      </div>
+
+      <!--Проекты-->
+      <div class="projects px-5 pb-5 m-0 row" data-toggle="modal" data-target="#projectInfoDlg">
+        <div data-descr="Республика Саха" class="item col-sm-12 col-xl-4 p-0 text-center">
+          <img class="w-100" src="images/saha_republic.png" />
+        </div>
+
+        <div data-descr="Газпром" class="item col-sm-12 col-xl-4 p-0 text-center" data-toggle="modal" data-target="#projectInfoDlg">
+          <img class="w-100" src="images/gazprom.png" />
+        </div>
+
+        <div data-descr="NOKIA" class="item col-sm-12 col-xl-4 p-0 text-center" data-toggle="modal" data-target="#projectInfoDlg">
+          <img class="w-100" src="images/nokia.png" />
+        </div>
+      </div>
+
+      <!--Кнопка загрузить еще-->
+      <div class="text-center mx-auto my-5">
+        <button class="load px-5 py-3">Загрузить еще</button>
+      </div>
+    </main>
+
+    <!--Подвал-->
+    <footer class="pt-3 pb-5">
+      <div class="footer-content m-auto row">
+        <!--Блок с контактной информацией-->
+        <div class="col-12 col-xl-7 m-auto px-0 pb-5 row">
+          <!--Адрес-->
+          <div class="contacts col-12">
+            <h1 class="my-5">Контакты</h1>
+
+            <p class="m-0">
+              Коммуникационное агентство
+              <br />
+              <br />
+              344000, Россия, г. Ростов-на-Дону ул. Мира, д. 12
+              <br />
+              Бизнес–центр «Рост», оф. 104
+            </p>
+          </div>
+
+          <!--Телефоны и email-->
+          <div class="col-12 row">
+            <div class="phones col-12 col-md-6 pt-4">
+              <ul class="p-0 m-0">
+                <li>+7 (861) 300-11-28</li>
+                <li>+7 (861) 300-11-52</li>
+                <li>+7 (861) 300-11-52</li>
+              </ul>
+            </div>
+
+            <div class="email col-12 col-md-6 m-0 pt-4">
+              <p class="pl-4">
+                Email:
+                <br />
+                info@example.com
+                <br />
+                <br />
+                Facebook.com/exampleagency
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <!--Форма заявок на проекты-->
+        <form class="form p-5 col-12 col-xl-5">
+          <!--Поля ввода формы-->
+          <input id="name" type="text" class="form-control" placeholder="Полное имя" required/>
+          <input id="email" type="email" class="form-control" placeholder="E-mail" required/>
+          <input id="phone" class="form-control" type="tel"  placeholder="Телефон" required/>
+          <textarea id="description" class="form-control" placeholder="Пожалуйста, опишите задачу" required></textarea>
+
+          <!--Ссылка на политику обработки данных-->
+          <div class="form-link py-3">
+            <a href="#">Политика обработки персональных данных</a>
+          </div>
+
+          <!--Кнопка отправки заявки-->
+          <div class="text-center m-auto">
+            <button class="submit px-5 py-3" type="submit">Отправить заявку</button>
+          </div>
+        </form>
+      </div>
+    </footer>
+  </body>
+</html>
